@@ -25,11 +25,11 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="mobileText" type="text" class="form-control text-center" value="1">
+                           <button id="plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$<span id="mobileValue">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="casingButtonMinus"class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="mobileText1" type="text" class="form-control text-center" value="1">
+                           <button id="casingButtonPlus" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span id="casingValue">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,9 +64,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
+                        <h5>$<span id="currenSubtTotal">1278</span></h5>
                         <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$<span id="currentTotal">1278</span></h5>
                      </div>
                   </div>
                </div>
@@ -77,6 +77,138 @@
          </div>
       </div>
    </section>
+   <script>
+      const mobileBtn=document.getElementById("plus");
+      mobileBtn.addEventListener("click",function(){
+         const mobileText=document.getElementById("mobileText").value;
+         const mobileTextAmount=parseFloat(mobileText);
+         const mobileAmount=mobileTextAmount+1;
+         document.getElementById("mobileText").value=mobileAmount;
+         
+         
+          const currentAmount=document.getElementById("mobileValue").innerText;
+          const currentnumber=parseFloat(currentAmount);
+          //console.log(currentnumber);
+          
+          
+          const totalAmount=currentnumber+1219;
+          document.getElementById("mobileValue").innerText=totalAmount;
+         console.log(totalAmount);
+
+         const subAmount=document.getElementById("currenSubtTotal").innerText;
+         const subtotal1=parseFloat(subAmount);
+         const totalSubtotal=subtotal1+1219;
+         document.getElementById("currenSubtTotal").innerText=totalSubtotal;
+
+
+         
+         const fastTotal1=document.getElementById("currentTotal").innerText;
+         const finalTotal1=parseFloat(fastTotal1);
+         const total1=finalTotal1+1219;
+         document.getElementById("currentTotal").innerText=total1;
+      })
+      const mobileBtn1=document.getElementById("minus");
+      mobileBtn1.addEventListener("click",function(){
+         const mobileText1=document.getElementById("mobileText").value;
+         const mobileTextAmount1=parseFloat(mobileText1);
+         const mobileAmount1=mobileTextAmount1-1;
+         document.getElementById("mobileText").value=mobileAmount1;
+         //console.log(mobileAmount1);
+
+
+         const currentAmount1=document.getElementById("mobileValue").innerText;
+          const currentnumber2=parseFloat(currentAmount1);
+          //console.log(currentnumber);
+          
+          
+          const totalAmount1=currentnumber2-1219;
+          document.getElementById("mobileValue").innerText=totalAmount1;
+         //console.log(totalAmount1);
+
+
+         const subAmount2=document.getElementById("currenSubtTotal").innerText;
+         const subtotal2=parseFloat(subAmount2);
+         const totalSubtotal2=subtotal2-1219;
+         document.getElementById("currenSubtTotal").innerText=totalSubtotal2;
+
+         
+         
+         const fastTotal2=document.getElementById("currentTotal").innerText;
+         const finalTotal2=parseFloat(fastTotal2);
+         const total2=finalTotal2-1219;
+         document.getElementById("currentTotal").innerText=total2;
+
+
+      })
+
+
+      const mobileBtn3=document.getElementById("casingButtonPlus");
+      mobileBtn3.addEventListener("click",function(){
+         const mobileText3=document.getElementById("mobileText1").value;
+         const mobileTextAmount3=parseFloat(mobileText3);
+         const mobileAmount3=mobileTextAmount3+1;
+         document.getElementById("mobileText1").value=mobileAmount3;
+         
+         
+          const currentAmount3=document.getElementById("casingValue").innerText;
+          const currentnumber3=parseFloat(currentAmount3);
+          //console.log(currentnumber);
+          
+          
+          const totalAmount3=currentnumber3+59;
+          document.getElementById("casingValue").innerText=totalAmount3;
+          //console.log(totalAmount);
+
+         
+          
+         const subAmount3=document.getElementById("currenSubtTotal").innerText;
+         const subtotal3=parseFloat(subAmount3);
+         const totalSubtotal3=subtotal3+59;
+         document.getElementById("currenSubtTotal").innerText=totalSubtotal3;
+
+
+         
+         
+         const fastTotal3=document.getElementById("currentTotal").innerText;
+         const finalTotal3=parseFloat(fastTotal3);
+         const total3=finalTotal3+59;
+         document.getElementById("currentTotal").innerText=total3;
+      })
+      const mobileBtn4=document.getElementById("casingButtonMinus");
+      mobileBtn4.addEventListener("click",function(){
+         const mobileText4=document.getElementById("mobileText1").value;
+         const mobileTextAmount4=parseFloat(mobileText4);
+         const mobileAmount4=mobileTextAmount4-1;
+         document.getElementById("mobileText1").value=mobileAmount4;
+         //console.log(mobileAmount1);
+
+
+         const currentAmount4=document.getElementById("casingValue").innerText;
+          const currentnumber4=parseFloat(currentAmount4);
+          //console.log(currentnumber);
+          
+          
+          const totalAmount4=currentnumber4-59;
+          document.getElementById("casingValue").innerText=totalAmount4;
+         //console.log(totalAmount1);
+
+         
+         const subAmount4=document.getElementById("currenSubtTotal").innerText;
+         const subtotal4=parseFloat(subAmount4);
+         const totalSubtotal4=subtotal4-59;
+         document.getElementById("currenSubtTotal").innerText=totalSubtotal4;
+
+
+         
+         
+         const fastTotal4=document.getElementById("currentTotal").innerText;
+         const finalTotal4=parseFloat(fastTotal4);
+         const total4=finalTotal4-59;
+         document.getElementById("currentTotal").innerText=total4;
+
+
+      })
+   </script>
 </body>
 
 </html>
